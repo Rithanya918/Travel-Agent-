@@ -3,6 +3,8 @@ Making travel planning intelligent, simple, and delightful
 
 <img width="1232" height="706" alt="Image" src="https://github.com/user-attachments/assets/ead452a1-1bab-4dae-a2a1-3f9dd1a8f3d4" />
 
+<img width="1709" height="979" alt="Image" src="https://github.com/user-attachments/assets/3a2fdc82-a405-495f-b38f-b625f6944a78" />
+
 ## Background
 
 Planning travel involves searching multiple platforms, comparing prices, and making decisions based on incomplete information. Payanam AI revolutionizes this experience by combining intelligent AI conversation with real-time travel data aggregation. Instead of visiting multiple websites, travelers can simply chat with an AI assistant that understands their needs and provides personalized flight and hotel recommendations in a clean, organized format.
