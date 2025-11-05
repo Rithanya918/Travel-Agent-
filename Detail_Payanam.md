@@ -1,6 +1,16 @@
 # Payanam_AI Travel Agent
 
 An intelligent travel booking assistant powered by GPT-3.5-turbo and LangGraph that helps users search for flights, hotels, and complete travel packages through both a form-based interface and an AI chat assistant.
+
+##  Features
+
+- **Dual Interface**: Quick search form + AI chat assistant
+- **Smart Intent Classification**: Automatically understands user queries
+- **Package Deals**: Combines flights and hotels for better prices
+- **Price Analysis**: Real-time price comparisons and recommendations
+- **Alternative Suggestions**: Finds nearby airports and alternative dates to save money
+- **Natural Language Processing**: Chat naturally about your travel plans
+
 ## Tools Used
 
 ### Core Technologies
@@ -10,23 +20,6 @@ An intelligent travel booking assistant powered by GPT-3.5-turbo and LangGraph t
 * **LangChain** - Framework for building LLM applications
 * **LangGraph** - Workflow orchestration for multi-step agent processes
 
-## Data Set
-
-### Data Sources
-* **Mock Flight Data** - Simulated real-time flight information
-  - Airlines: Multiple carriers (American, Delta, United, etc.)
-  - Routes: Miami ↔ Madrid, New York ↔ London
-  - Pricing: Dynamic with variations
-  
-* **Mock Hotel Data** - Simulated hotel inventory
-  - Properties: Range from budget to luxury
-  - Amenities: Pools, WiFi, parking, restaurants
-  - Locations: Distance from city center
-  
-* **Real-time Generation** - No static dataset
-  - Prices vary by search
-  - Availability changes
-  - Analysis performed on-the-fly
 ## System Architecture
 
 ```mermaid
@@ -249,18 +242,7 @@ graph LR
     style End fill:#c8e6c9
     style Step1,Step2,Step3,Step4,Step5,Step6 fill:#fff3e0
 ```
-
-##  Features
-
-- **Dual Interface**: Quick search form + AI chat assistant
-- **Smart Intent Classification**: Automatically understands user queries
-- **Multi-Tool Agent**: Uses 7 specialized tools for comprehensive travel planning
-- **Package Deals**: Combines flights and hotels for better prices
-- **Price Analysis**: Real-time price comparisons and recommendations
-- **Alternative Suggestions**: Finds nearby airports and alternative dates to save money
-- **Natural Language Processing**: Chat naturally about your travel plans
-
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -297,75 +279,10 @@ python app.py
 # Then visit http://localhost:5007
 ```
 
-## 📋 Usage Examples
-
-### Quick Search Form
-- Fill in origin, destination, dates, and passengers
-- Click "Search Trips" for comprehensive results
-
-### AI Chat Assistant
-**Example queries:**
-- "Find cheap flights to Madrid"
-- "I need hotels in London for 3 nights"
-- "Book me flights and hotel to Paris for 2 people"
-- "What are alternative airports near New York?"
-- "Compare prices for flights to Madrid"
-
-## ⚙️ Configuration
-
-### Supported Routes
-- Miami ↔ Madrid
-- New York ↔ London
-
-### Default Values
-```python
-{
-    "origin": "Miami",
-    "destination": "Madrid",
-    "date": "2025-12-14",
-    "passengers": 1,
-    "check_in": "2025-12-14",
-    "check_out": "2025-12-17",
-    "guests": 2
-}
-```
-
-## 🔧 Technical Details
-
-### State Management
-```python
-class TravelAgentState(TypedDict):
-    query: str                      # User input
-    intent: str                     # Classified intent
-    extracted_params: Dict          # Travel parameters
-    tools_used: List[str]           # Tools executed
-    flights: List[Dict]             # Flight results
-    hotels: List[Dict]              # Hotel results
-    package_info: Dict              # Package details
-    final_response: str             # AI response
-    messages: List[str]             # Conversation log
-```
-
 ### LLM Configuration
 - **Model**: GPT-3.5-turbo
 - **Temperature**: 0 (deterministic responses)
 - **Provider**: OpenAI via LangChain
-
-### Flask Endpoints
-- `GET /` - Home page with dual interface
-- `POST /search` - Process form submissions
-- `POST /chat` - Handle chat messages (returns JSON)
-- `GET /health` - Health check endpoint
-
-## ⚠️ Important Notes
-
-### Security Warning
-**⚠️ CRITICAL**: The notebook contains an exposed OpenAI API key!
-
-**Immediate actions required:**
-1. Revoke the exposed API key from OpenAI dashboard
-2. Generate a new key
-3. Use environment variables: `OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')`
 
 ### Limitations
 - Mock data only (no real flight/hotel APIs)
@@ -374,53 +291,9 @@ class TravelAgentState(TypedDict):
 - No persistent storage
 - No user authentication
 
-## 🛠️ Troubleshooting
-
-**"API Key Invalid" Error**
-- Verify key is correctly set
-- Check if key hasn't been revoked
-- Ensure billing is enabled on OpenAI account
-
-**"Port Already in Use"**
-```python
-PORT = 5008  # Change to different port
-```
-
-**ngrok Connection Issues**
-- Free tier has limits (40 connections/minute)
-- Tunnel expires after 2 hours
-- May need to restart for new URL
-
-## 📝 Sample Test Queries
-
-1. "Find flights from Miami to Madrid"
-2. "I need the cheapest hotel in London"
-3. "Book everything for a trip to Paris next month"
-4. "What are alternatives to flying into Madrid?"
-5. "Compare hotel prices in Madrid"
-6. "I want a complete package to New York for 2 people"
-
-## 🤝 Contributing
-
-**Ways to extend:**
-- Add more tools to `FlightTools` class
-- Integrate real travel APIs (Amadeus, Skyscanner)
-- Improve UI/UX design
-- Add more intent types
-- Implement user preferences and history
-
 ## 📄 License
 
 This is a demonstration project for educational purposes.
 
-## 🔗 Resources
-
-- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
-- [OpenAI API Docs](https://platform.openai.com/docs)
-- [Flask Documentation](https://flask.palletsprojects.com/)
-- [ngrok Documentation](https://ngrok.com/docs)
-
 ---
-
-**Built with**: OpenAI GPT-3.5, LangGraph, LangChain, Flask, ngrok
 
