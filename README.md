@@ -164,17 +164,12 @@ graph TB
         AH[analyze_hotel_prices<br/>Best value analysis]
     end
     
-    subgraph PackageTools[📦 Package Tools]
-        GP[get_hotel_package<br/>Complete packages]
-    end
     
     Agent[🤖 Agent] --> FlightTools
     Agent --> HotelTools
-    Agent --> PackageTools
     
     FlightTools --> Results[📊 Results]
     HotelTools --> Results
-    PackageTools --> Results
     
     classDef agent fill:#fff3e0
     classDef tools fill:#e8f5e8
@@ -290,67 +285,6 @@ graph LR
     class E1,E2,E3,E4 endpoints
     class P1,P2,P3,P4 processing
     class R1,R2 response
-```
-
-## 🔄 State Transformation
-
-```mermaid
-graph LR
-    subgraph Initial[📥 Initial State]
-        I1[query: string]
-        I2[messages: []]
-        I3[intent: empty]
-    end
-    
-    subgraph Processing[⚙️ Processing State]
-        P1[intent: classified]
-        P2[params: extracted]
-        P3[tools_plan: selected]
-        P4[tools_used: executed]
-    end
-    
-    subgraph Final[📤 Final State]
-        F1[flights: List]
-        F2[hotels: List]
-        F3[analysis: Dict]
-        F4[final_response: string]
-    end
-    
-    Initial --> Processing
-    Processing --> Final
-    
-    classDef initial fill:#e1f5fe
-    classDef processing fill:#fff3e0
-    classDef final fill:#c8e6c9
-    
-    class I1,I2,I3 initial
-    class P1,P2,P3,P4 processing
-    class F1,F2,F3,F4 final
-```
-
-## 🔐 Security Flow
-
-```mermaid
-graph TD
-    A[⚠️ Security Issues] --> B[Exposed API Key]
-    B --> C{Action Required}
-    
-    C -->|Step 1| D[🔴 Revoke Current Key]
-    C -->|Step 2| E[🔑 Generate New Key]
-    C -->|Step 3| F[🔒 Use Environment Variables]
-    
-    D --> G[OpenAI Dashboard]
-    E --> G
-    F --> H[os.getenv OPENAI_API_KEY]
-    
-    H --> I[✅ Secure Implementation]
-    
-    style A fill:#ffebee
-    style B fill:#ffcdd2
-    style D fill:#ef5350
-    style E fill:#ffa726
-    style F fill:#66bb6a
-    style I fill:#c8e6c9
 ```
 
 ## 🐛 Troubleshooting Flow
