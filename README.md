@@ -46,13 +46,13 @@ graph TB
 
 ```mermaid
 sequenceDiagram
-    participant U as 👤 User
-    participant B as 🌐 Browser
-    participant F as 🔥 Flask
-    participant A as 🤖 Agent
-    participant L as 🧠 LLM (GPT-3.5)
-    participant T as 🛠️ Tools
-    participant D as 💾 Mock DB
+    participant U as  User
+    participant B as  Browser
+    participant F as  Flask
+    participant A as  Agent
+    participant L as  LLM (GPT-3.5)
+    participant T as  Tools
+    participant D as  Mock DB
 
     U->>B: Enter Query
     B->>F: POST /chat {message}
@@ -92,7 +92,7 @@ sequenceDiagram
     B->>U: Display results
 ```
 
-## 🎯 Agent Workflow (LangGraph)
+##  Agent Workflow (LangGraph)
 
 ```mermaid
 graph LR
@@ -112,27 +112,27 @@ graph LR
     style Consolidate fill:#d1c4e9
 ```
 
-## 🛠️ Tool Architecture
+## Tool Architecture
 
 ```mermaid
 graph TB
-    subgraph FlightTools[✈️ Flight Tools]
+    subgraph FlightTools[Flight Tools]
         SF[search_flights<br/>Find available flights]
         AP[analyze_prices<br/>Price analysis]
         GR[get_route_info<br/>Route details]
         SA[suggest_alternatives<br/>Alternative options]
     end
     
-    subgraph HotelTools[🏨 Hotel Tools]
+    subgraph HotelTools[Hotel Tools]
         SH[search_hotels<br/>Find hotels]
         AH[analyze_hotel_prices<br/>Best value analysis]
     end
     
     
-    Agent[🤖 Agent] --> FlightTools
+    Agent[ Agent] --> FlightTools
     Agent --> HotelTools
     
-    FlightTools --> Results[📊 Results]
+    FlightTools --> Results[ Results]
     HotelTools --> Results
     
     classDef agent fill:#fff3e0
@@ -144,7 +144,7 @@ graph TB
     class Results results
 ```
 
-## 💬 Chat Flow Example
+## Chat Flow Example
 
 ```mermaid
 graph TD
@@ -169,33 +169,33 @@ graph TD
     style K fill:#e8f5e8
 ```
 
-## 🌐 Deployment Architecture
+##  Deployment Architecture
 
 ```mermaid
 graph TB
-    subgraph Colab[☁️ Google Colab Environment]
-        Notebook[📓 Jupyter Notebook]
-        Flask[🔥 Flask Server :5007]
-        Agent[🤖 LangGraph Agent]
+    subgraph Colab[ Google Colab Environment]
+        Notebook[ Jupyter Notebook]
+        Flask[Flask Server :5007]
+        Agent[ LangGraph Agent]
         
         Notebook --> Flask
         Flask --> Agent
     end
     
-    subgraph ngrok[🚇 ngrok Tunnel]
+    subgraph ngrok[ ngrok Tunnel]
         Tunnel[Public URL Generator]
     end
     
-    subgraph Internet[🌍 Internet]
-        Users[👥 Users]
-        Browser[🌐 Web Browsers]
+    subgraph Internet[ Internet]
+        Users[Users]
+        Browser[Web Browsers]
     end
     
     Flask --> Tunnel
     Tunnel --> Browser
     Users --> Browser
     
-    Agent --> OpenAI[🧠 OpenAI API<br/>GPT-3.5-turbo]
+    Agent --> OpenAI[ OpenAI API<br/>GPT-3.5-turbo]
     
     classDef colab fill:#fff3e0
     classDef tunnel fill:#e1f5fe
@@ -208,50 +208,7 @@ graph TB
     class OpenAI external
 ```
 
-## 📡 API Endpoint Flow
-
-```mermaid
-graph LR
-    subgraph Endpoints[🔌 Flask Endpoints]
-        E1[GET /<br/>Home Page]
-        E2[POST /search<br/>Form Handler]
-        E3[POST /chat<br/>Chat Handler]
-        E4[GET /health<br/>Health Check]
-    end
-    
-    subgraph Processing[⚙️ Processing]
-        P1[Parse Request]
-        P2[Create State]
-        P3[Invoke Agent]
-        P4[Generate Response]
-    end
-    
-    subgraph Response[📤 Response]
-        R1[HTML Page]
-        R2[JSON Data]
-    end
-    
-    E1 --> R1
-    E2 --> P1
-    E3 --> P1
-    E4 --> R2
-    
-    P1 --> P2
-    P2 --> P3
-    P3 --> P4
-    P4 --> R1
-    P4 --> R2
-    
-    classDef endpoints fill:#e1f5fe
-    classDef processing fill:#fff3e0
-    classDef response fill:#c8e6c9
-    
-    class E1,E2,E3,E4 endpoints
-    class P1,P2,P3,P4 processing
-    class R1,R2 response
-```
-
-## 🚀 Quick Start Flow
+##  Quick Start Flow
 
 ```mermaid
 graph LR
@@ -261,14 +218,14 @@ graph LR
     Step3 --> Step4[4. Run All Cells]
     Step4 --> Step5[5. Get ngrok URL]
     Step5 --> Step6[6. Access Web UI]
-    Step6 --> End([Ready! 🎉])
+    Step6 --> End([Ready!])
     
     style Start fill:#e1f5fe
     style End fill:#c8e6c9
     style Step1,Step2,Step3,Step4,Step5,Step6 fill:#fff3e0
 ```
 
-## ✨ Features
+##  Features
 
 - **Dual Interface**: Quick search form + AI chat assistant
 - **Smart Intent Classification**: Automatically understands user queries
