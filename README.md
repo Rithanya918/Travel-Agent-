@@ -112,42 +112,6 @@ graph LR
     style Consolidate fill:#d1c4e9
 ```
 
-## 🧠 Intent Classification System
-
-```mermaid
-graph TD
-    Query[User Query] --> LLM[GPT-3.5 Classifier]
-    
-    LLM --> Simple{simple_search?}
-    LLM --> Price{price_focused?}
-    LLM --> Explore{explore_alternatives?}
-    LLM --> Deep{deep_analysis?}
-    LLM --> Hotel{hotel_search?}
-    LLM --> Package{package_deal?}
-    
-    Simple -->|Yes| T1[Tool: search_flights]
-    Price -->|Yes| T2[Tools: search_flights<br/>analyze_prices]
-    Explore -->|Yes| T3[Tools: search_flights<br/>analyze_prices<br/>suggest_alternatives]
-    Deep -->|Yes| T4[Tools: search_flights<br/>analyze_prices<br/>get_route_info<br/>suggest_alternatives]
-    Hotel -->|Yes| T5[Tools: search_hotels<br/>analyze_hotel_prices]
-    Package -->|Yes| T6[Tools: search_flights<br/>search_hotels<br/>get_hotel_package]
-    
-    T1 --> Execute[Execute Selected Tools]
-    T2 --> Execute
-    T3 --> Execute
-    T4 --> Execute
-    T5 --> Execute
-    T6 --> Execute
-    
-    classDef query fill:#e1f5fe
-    classDef intent fill:#fff3e0
-    classDef tools fill:#e8f5e8
-    
-    class Query query
-    class Simple,Price,Explore,Deep,Hotel,Package intent
-    class T1,T2,T3,T4,T5,T6,Execute tools
-```
-
 ## 🛠️ Tool Architecture
 
 ```mermaid
@@ -285,42 +249,6 @@ graph LR
     class E1,E2,E3,E4 endpoints
     class P1,P2,P3,P4 processing
     class R1,R2 response
-```
-
-## 🐛 Troubleshooting Flow
-
-```mermaid
-graph TD
-    Problem[🐛 Issue Detected] --> Type{Issue Type?}
-    
-    Type -->|API Key| K1[Check Key Valid]
-    Type -->|Port| P1[Change Port Number]
-    Type -->|ngrok| N1[Check Free Tier Limits]
-    Type -->|Agent| A1[Check Flask Status]
-    
-    K1 --> K2{Valid?}
-    K2 -->|No| K3[Revoke & Regenerate]
-    K2 -->|Yes| K4[Check Billing Enabled]
-    
-    P1 --> P2[PORT = 5008]
-    
-    N1 --> N2{Limit Reached?}
-    N2 -->|Yes| N3[Wait or Upgrade]
-    N2 -->|No| N4[Restart Tunnel]
-    
-    A1 --> A2[Verify State Dict]
-    A2 --> A3[Check Console Logs]
-    
-    K3 --> Solved[✅ Resolved]
-    K4 --> Solved
-    P2 --> Solved
-    N3 --> Solved
-    N4 --> Solved
-    A3 --> Solved
-    
-    style Problem fill:#ffebee
-    style Type fill:#fff9c4
-    style Solved fill:#c8e6c9
 ```
 
 ## 🚀 Quick Start Flow
