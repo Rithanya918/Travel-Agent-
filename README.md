@@ -30,41 +30,6 @@ Planning travel involves searching multiple platforms, comparing prices, and mak
    - Alternative suggestions (nearby airports, flexible dates)
    - Instant responses without page refreshes
 
-## Tools Used
-
-### Core Technologies
-* **Python** - Backend logic and data processing
-* **Flask** - Web application framework serving dual interface
-* **OpenAI GPT-3.5-turbo** - Natural language understanding and response generation
-* **LangChain** - Framework for building LLM applications
-* **LangGraph** - Workflow orchestration for multi-step agent processes
-
-## Data Set
-
-### Data Sources
-* **Mock Flight Data** - Simulated real-time flight information
-  - Airlines: Multiple carriers (American, Delta, United, etc.)
-  - Routes: Miami ↔ Madrid, New York ↔ London
-  - Pricing: Dynamic with variations
-  
-* **Mock Hotel Data** - Simulated hotel inventory
-  - Properties: Range from budget to luxury
-  - Amenities: Pools, WiFi, parking, restaurants
-  - Locations: Distance from city center
-  
-* **Real-time Generation** - No static dataset
-  - Prices vary by search
-  - Availability changes
-  - Analysis performed on-the-fly
-
-### User Interaction Data
-* Search queries and patterns (anonymized)
-* Intent classification results
-* Popular routes and destinations
-* Price sensitivity analysis
-* Tool usage statistics
-* Chat conversation flows
-
 ### Future Integration
 Ready for real API integration:
 * Amadeus API (flights)
@@ -72,7 +37,6 @@ Ready for real API integration:
 * Booking.com API (hotels)
 * Hotels.com API (hotels)
 * Google Flights (price tracking)
-
 
 ## Business Impact
 
@@ -97,7 +61,6 @@ Ready for real API integration:
 * **Feature Enhancement** - Modular architecture allows incremental updates
 
 
-
 ## Future Enhancements
 
 ### Short Term
@@ -119,8 +82,6 @@ Ready for real API integration:
 - [ ] Multi-language support
 - [ ] Personalized recommendations using ML
 - [ ] Social features (share itineraries)
-- [ ] Loyalty program integration
-
 
 
 ## License
