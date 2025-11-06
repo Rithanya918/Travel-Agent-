@@ -7,7 +7,12 @@ Making travel planning intelligent, simple, and delightful
 
 ## Background
 
-Planning travel involves searching multiple platforms, comparing prices, and making decisions based on incomplete information. Payanam AI revolutionizes this experience by combining intelligent AI conversation with real-time travel data aggregation. Instead of visiting multiple websites, travelers can simply chat with an AI assistant that understands their needs and provides personalized flight and hotel recommendations in a clean, organized format.
+* Build an **AI-powered conversational interface** using NLP for travel booking
+* Implement **machine learning intent classification** to understand user needs
+* Apply **data aggregation and analytics** to compare options from multiple sources
+* Use **statistical analysis** for price insights and recommendations
+* Leverage **LLM technology** (GPT-3.5) for natural language understanding and generation
+* Present results using **data visualization principles** for maximum clarity
 
 ## Business Questions
 
@@ -88,11 +93,5 @@ MIT License - Free to use, modify, and distribute
 
 Built using OpenAI, LangGraph, and Flask
 
-## Support
-
-For issues, questions, or contributions:
-* GitHub Issues
-* Documentation
-* Community Discussions
 
 ---
