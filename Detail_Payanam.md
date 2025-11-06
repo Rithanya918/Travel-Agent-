@@ -9,7 +9,7 @@ An intelligent travel booking assistant powered by GPT-3.5-turbo and LangGraph t
 - **Package Deals**: Combines flights and hotels for better prices
 - **Price Analysis**: Real-time price comparisons and recommendations
 - **Alternative Suggestions**: Finds nearby airports and alternative dates to save money
-- **Natural Language Processing**: Chat naturally about your travel plans
+- **NLP**: Chat naturally about your travel plans
 
 ## Tools Used
 
