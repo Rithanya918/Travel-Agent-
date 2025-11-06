@@ -34,14 +34,6 @@ Planning travel involves searching multiple platforms, comparing prices, and mak
    - Alternative suggestions (nearby airports, flexible dates)
    - Instant responses without page refreshes
 
-### Future Integration
-Ready for real API integration:
-* Amadeus API (flights)
-* Skyscanner API (flights & hotels)
-* Booking.com API (hotels)
-* Hotels.com API (hotels)
-* Google Flights (price tracking)
-
 ## Business Impact
 
 ### User Benefits
